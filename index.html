@@ -1,0 +1,777 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FinTradex</title>
+<script src="https://cdn.emailjs.com/dist/email.min.js"></script>
+    <script type="text/javascript">
+    (function () {
+        emailjs.init("ubv2Y5yF4251HgaBe");
+    })();
+</script>
+<script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" />
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <style>
+        /* Reset some default styles */
+        body, h1, h2, p, ul {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+h2:hover,
+        h1:hover {
+            color: #8e54e9; /* Change color on hover */
+        }
+
+        /* Style for join buttons */
+        .join-button:hover {
+            background-color: #27ae60; /* Darker green on hover */
+            transform: scale(1.05); /* Increase size on hover */
+        }
+        body {
+            font-family: 'Roboto', sans-serif;
+            background: #141e30; /* Background gradient or image */
+            color: #fff;
+            line-height: 1.6;
+        }
+
+        /* Container */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        /* Header */
+        header {
+            text-align: center;
+            padding: 20px 0;
+            color: #8e54e9; /* Accent color */
+        }
+
+        header img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 10px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+        }
+
+        h1 {
+            font-size: 2em;
+            margin-top: 10px;
+            /* Hover effect for the slogan */
+            transition: color 0.3s ease;
+        }
+
+        h1:hover {
+            color: #8e54e9; /* Change color on hover */
+        }
+
+        /* Navigation Section */
+        .navbar {
+            background-color: #8e54e9;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .menu {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 10px 0;
+        }
+
+        .menu li {
+            margin: 0 20px;
+            position: relative;
+            font-size: 1.2em;
+            cursor: pointer;
+        }
+
+        .menu li a {
+            color: #fff;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .menu li a:hover {
+            color: #4776e6; /* Change color on hover */
+        }
+
+        /* About Section */
+        #about {
+            padding: 40px 0;
+            text-align: center;
+            background: url('about-bg.jpg') center/cover; /* Add background image */
+            color: #fff;
+        }
+
+        #about h2 {
+            font-size: 2.5em;
+            margin-bottom: 20px;
+            /* Hover effect for the heading */
+            transition: color 0.3s ease;
+        }
+
+        #about h2:hover {
+            color: #8e54e9; /* Change color on hover */
+        }
+
+        #about p {
+            font-size: 1.1em;
+            line-height: 1.8;
+            opacity: 0.9;
+        }
+
+        /* Services Section */
+        #services {
+            padding: 40px 0;
+            text-align: center;
+            background: #2c3e50; /* Background color */
+            color: #fff;
+        }
+
+        #services h2 {
+            font-size: 2.5em;
+            margin-bottom: 20px;
+            /* Hover effect for the heading */
+            transition: color 0.3s ease;
+        }
+
+        #services h2:hover {
+            color: #8e54e9; /* Change color on hover */
+        }
+
+        #services p {
+            font-size: 1.2em;
+            line-height: 1.8;
+            opacity: 0.9;
+        }
+
+        /* Contact Section */
+        #contact {
+            padding: 40px 0;
+            text-align: center;
+            background: #27ae60; /* Background color */
+            color: #fff;
+        }
+
+        #contact h2 {
+            font-size: 2.5em;
+            margin-bottom: 20px;
+            font-family: 'Calibri', sans-serif; /* Change font to Calibri */
+        }
+
+        form {
+            max-width: 600px;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            border: 2px solid #fff; /* Border color */
+            border-radius: 10px; /* Border radius */
+            padding: 20px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.2); /* Box shadow */
+        }
+
+        form label {
+            margin-bottom: 8px;
+            font-size: 1.1em;
+        }
+
+        form input,
+        form textarea,
+        form select {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            font-size: 1em;
+        }
+
+        form button {
+            background-color: #333;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 1.1em;
+            transition: background-color 0.3s ease;
+        }
+
+        form button:hover {
+            background-color: #555;
+        }
+
+        /* Footer Section */
+        footer {
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            padding: 20px 0;
+            margin-top: 40px;
+        }
+
+        footer p {
+            font-size: 1.1em;
+            margin-bottom: 10px;
+        }
+
+        footer a {
+            color: #8e54e9;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        footer a:hover {
+            color: #4776e6;
+        }
+
+        /* Style for service buttons */
+        .service-buttons {
+            display: flex;
+            justify-content: space-around;
+            margin-top: 15px;
+        }
+
+        .service-button {
+            padding: 10px 20px;
+            background-color: #fff;
+            color: #000; /* Change font color to black */
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.5s ease, color 0.5s ease;
+        }
+
+        .service-button:hover {
+            background-color: #555;
+            color: #fff;
+        }
+
+
+        /* Style for slow-motion effect */
+        .service-details-popup.open {
+            animation: openPopup 0.5s ease;
+        }
+
+        .service-details-popup.close {
+            animation: closePopup 0.5s ease;
+        }
+
+        @keyframes openPopup {
+            from {
+                transform: scale(0);
+            }
+            to {
+                transform: scale(1);
+            }
+        }
+
+        @keyframes closePopup {
+            from {
+                transform: scale(1);
+            }
+            to {
+                transform: scale(0);
+            }
+        } 
+
+	#join-us {
+            padding: 40px 0;
+            text-align: center;
+            background: #3498db; /* Background color */
+            color: #fff;
+            transform: translateX(-100%); /* Initially off-screen to the left */
+            transition: transform 0.8s ease; /* Animation transition */
+        }
+
+        #join-us.show {
+            transform: translateX(0); /* Move in from left when the show class is added */
+        }
+
+        #join-us h2 {
+            font-size: 2.5em;
+            margin-bottom: 20px;
+        }
+
+        #join-us p {
+            font-size: 1.2em;
+            line-height: 1.8;
+            opacity: 0.9;
+        }
+
+        /* Style for join buttons */
+        .join-buttons {
+            display: flex;
+            justify-content: center;
+            margin-top: 20px;
+        }
+
+        .join-button {
+            display: flex;
+            align-items: center;
+            padding: 10px 20px;
+            margin: 0 15px;
+            background-color: #2ecc71; /* Green color */
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+        }
+
+        .join-button:hover {
+            background-color: #27ae60; /* Darker green on hover */
+            transform: scale(1.05); /* Increase size on hover */
+        }
+
+        .button-icon {
+            margin-right: 10px;
+        } 
+/* SIP Calculator styles */
+        #sip-calculator {
+            padding: 40px 0;
+            text-align: center;
+            background: #3498db; /* Background color */
+            color: #fff;
+        }
+
+        #sip-calculator h2 {
+            font-size: 2.5em;
+            margin-bottom: 20px;
+        }
+
+        #calculator-form {
+            max-width: 600px;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            border: 2px solid #fff; /* Border color */
+            border-radius: 10px; /* Border radius */
+            padding: 20px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.2); /* Box shadow */
+        }
+
+        #calculator-form label {
+            margin-bottom: 8px;
+            font-size: 1.1em;
+        }
+
+        #calculator-form input {
+            width: calc(100% - 22px);
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            font-size: 1em;
+            display: inline-block;
+        }
+
+        #calculator-form button {
+            background-color: #333;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 1.1em;
+            transition: background-color 0.3s ease;
+        }
+
+        #calculator-form button:hover {
+            background-color: #555;
+        }
+
+        #calculator-result {
+            margin-top: 20px;
+            font-size: 1.2em;
+        } 
+
+        /* SIP Calculator styles */
+        #calculator-container {
+            display: flex;
+            justify-content: space-between;
+            padding: 40px 0;
+            text-align: center;
+            background: #3498db; /* Background color */
+            color: #fff;
+        }
+
+        .calculator {
+            flex: 1;
+            max-width: 600px;
+            margin: 0 10px;
+            display: flex;
+            flex-direction: column;
+            border: 2px solid #fff; /* Border color */
+            border-radius: 10px; /* Border radius */
+            padding: 20px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.2); /* Box shadow */
+        }
+
+        .calculator label {
+            margin-bottom: 8px;
+            font-size: 1.1em;
+        }
+
+        .calculator input {
+            width: calc(100% - 22px);
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            font-size: 1em;
+            display: inline-block;
+        }
+
+        .calculator button {
+            background-color: #333;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 1.1em;
+            transition: background-color 0.3s ease;
+        }
+
+        .calculator button:hover {
+            background-color: #555;
+        }
+
+        .calculator-result {
+            margin-top: 20px;
+            font-size: 1.2em;
+        }
+</style>
+</head>
+<body>
+
+    <!-- Header Section -->
+    <header>
+        <!-- Add your logo and slogan here -->
+        <img src="logo2.jpg" alt="FinTradex Logo">
+        <h1>Bridge to your Financial Success</h1>
+    </header>
+
+    <!-- Navigation Section -->
+    <div class="navbar">
+        <ul class="menu">
+            <li><a href="#about">About</a></li>
+            <li><a href="#services">Services</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </div>
+
+    <!-- About Section -->
+    <section id="about">
+        <div class="container">
+            <h2>About Us</h2>
+            <p>Welcome to FinTradex, where financial expertise meets personalized service. At FinTradex, we understand the dynamic nature of the financial markets and the importance of making informed investment decisions. Our team is dedicated to providing you with comprehensive financial services tailored to your unique needs and goals.</p>
+            <p><b>Dedication to Education</b></p>
+            <p>Strive to provide valuable insights and information. Operate as a resource hub and educational platform.</p>
+            <p><b>Values: Transparency and Integrity</b></p>
+            <p>Core values centered around transparency and integrity. Financial Literacy Advocacy. Believe in the importance of financial literacy. Foster a community where individuals can enhance their understanding of the markets.</p>
+            <p><b>Important Note</b></p>
+            <p>Any financial decision based on FinTradex information is at the user's discretion. Strongly recommend consulting with a SEBI registered financial advisor for personalized advice.</p>
+            <p><b>Disclaimer:</b> Not a SEBI Registered Advisor</p>
+        </div>
+    </section>
+
+<section id="join-us" class="show">
+        <div class="container">
+            <h2>Join Our Free Telegram Channel and Follow Us on Instagram</h2>
+            <p>Stay updated with the latest financial insights, market trends, and exclusive content. Join our community now!</p>
+
+            <!-- Join Buttons -->
+            <div class="join-buttons">
+                <!-- Telegram Button -->
+                <a href="https://t.me/FinTradex0" target="_blank" class="join-button">
+                    <i class="fab fa-telegram plane-icon button-icon"></i> Join on Telegram
+                </a>
+
+                <!-- Instagram Button -->
+                <a href="https://instagram.com/fintradex.in?igshid=NGVhN2U2NjQ0Yg==" target="_blank" class="join-button">
+                    <i class="fab fa-instagram button-icon"></i> Follow on Instagram
+                </a>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Services Section -->
+    <section id="services">
+        <div class="container">
+            <h2>Our Services</h2>
+
+            <!-- Investment Services -->
+            <div class="service-category">
+                <h3>Investment Services</h3>
+                <p>We offer a range of investment services to help you grow your wealth.</p>
+
+                <!-- Investment Buttons -->
+                <div class="service-buttons">
+                    <button class="service-button" onclick="showDetails('Nifty')">Nifty</button>
+                    <button class="service-button" onclick="showDetails('BankNifty')">BankNifty</button>
+                    <button class="service-button" onclick="showDetails('FinNifty')">FinNifty</button>
+                    <button class="service-button" onclick="showDetails('CRUDEOIL')">CRUDEOIL</button>
+                </div>
+            </div>
+
+            <!-- Financial Services -->
+            <div class="service-category">
+                <h3>Financial Services</h3>
+                <p>Explore our financial services to meet your diverse financial needs.</p>
+
+                <!-- Financial Buttons -->
+                <div class="service-buttons">
+                    <button class="service-button" onclick="showDetails('HomeLoan')">Home Loan</button>
+                    <button class="service-button" onclick="showDetails('PersonalLoan')">Personal Loan</button>
+                    <button class="service-button" onclick="showDetails('BusinessLoan')">Business Loan</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Service Details Popup -->
+    <div id="serviceDetailsPopup" class="service-details-popup close">
+        <span class="close-popup" onclick="closePopup()">✖</span>
+        <div id="popupContent"></div>
+    </div>
+
+    <script>
+        function showDetails(serviceType) {
+            // Customize the details based on the serviceType
+            let details = getServiceDetails(serviceType);
+
+            // Display the popup with the details
+            document.getElementById('popupContent').innerHTML = details;
+            document.getElementById('serviceDetailsPopup').classList.remove('close');
+            document.getElementById('serviceDetailsPopup').classList.add('open');
+        }
+
+        function closePopup() {
+            // Hide the popup with a slow-motion effect
+            document.getElementById('serviceDetailsPopup').classList.remove('open');
+            document.getElementById('serviceDetailsPopup').classList.add('close');
+        }
+
+        function getServiceDetails(serviceType) {
+            // Add logic here to get details based on the serviceType
+            switch (serviceType) {
+                case 'Nifty':
+                    return 'It includes 50 large-cap stocks across various sectors, providing a broad view of the Indian equity market.';
+                case 'BankNifty':
+                    return 'BankNifty is a banking sector index on the National Stock Exchange (NSE). Comprising major banking stocks.';
+                case 'FinNifty':
+                    return 'FinNifty represents the financial sector on the National Stock Exchange (NSE). It includes stocks from various financial services such as banking, insurance, and non-banking financial companies (NBFCs), offering insights into the performance of the financial industry.';
+                case 'CRUDEOIL':
+                    return 'CRUDEOIL, often referred to as crude oil, is a key commodity in the global market. Traded on various exchanges, its price is influenced by geopolitical events, economic indicators, and supply-demand dynamics, impacting economies worldwide.';
+                case 'HomeLoan':
+                    return 'A home loan is a financial product that enables individuals to purchase or refinance residential properties. Borrowers receive a lump sum amount from a lender, which is repaid over time with interest.';
+                case 'PersonalLoan':
+                    return 'A personal loan is an unsecured loan that individuals can use for various purposes, such as debt consolidation, medical expenses, or travel.';
+                case 'BusinessLoan':
+                    return 'Business loans are financial products designed to support the financial needs of businesses. Entrepreneurs and companies use these loans for purposes like expansion, working capital, or equipment purchase.';
+                default:
+                    return 'Details not available.';
+            }
+        }
+    </script>
+<script>
+        window.addEventListener('scroll', function () {
+            const joinUsSection = document.getElementById('join-us');
+            const joinUsOffset = joinUsSection.offsetTop;
+            const windowHeight = window.innerHeight;
+            const scrollY = window.scrollY;
+
+            if (scrollY > joinUsOffset - windowHeight + 100) {
+                joinUsSection.classList.add('show');
+            }
+        });
+    </script>
+
+
+
+<!-- Investment Calculator Section -->
+    <section id="calculator-container">
+        <!-- SIP Calculator -->
+        <div class="calculator" id="sip-calculator">
+            <h2>SIP Calculator</h2>
+            <form id="sip-calculator-form">
+                <label for="sip-investment">Monthly Investment Amount:</label>
+                <input type="number" id="sip-investment" name="sip-investment" placeholder="Enter amount" required>
+
+                <label for="sip-rate">Expected Annual Rate of Return (%):</label>
+                <input type="number" id="sip-rate" name="sip-rate" placeholder="Enter rate" required>
+
+                <label for="sip-time">Investment Period (in years):</label>
+                <input type="number" id="sip-time" name="sip-time" placeholder="Enter years" required>
+
+                <!-- Change type to "button" to prevent form submission -->
+                <button type="button" onclick="calculateSIP()">Calculate</button>
+            </form>
+            <div class="calculator-result" id="sip-calculator-result"></div>
+        </div>
+
+        <!-- Monthly Investment Need Calculator -->
+        <div class="calculator" id="monthly-investment-need">
+            <h2>Monthly Investment Need Calculator</h2>
+            <form id="monthly-investment-need-form">
+                <label for="expected-amount">Expected Amount:</label>
+                <input type="number" id="expected-amount" name="expected-amount" placeholder="Enter amount" required>
+
+                <label for="cagr">Expected Annual Return CAGR (%):</label>
+                <input type="number" id="cagr" name="cagr" placeholder="Enter CAGR" required>
+
+                <label for="investment-need-time">Investment Period (in years):</label>
+                <input type="number" id="investment-need-time" name="investment-need-time" placeholder="Enter years" required>
+
+                <!-- Change type to "button" to prevent form submission -->
+                <button type="button" onclick="calculateMonthlyInvestment()">Calculate</button>
+            </form>
+            <div class="calculator-result" id="monthly-investment-need-result"></div>
+        </div>
+    </section>
+
+    <script>
+        // Functions for SIP Calculator
+        function calculateSIP() {
+            // Get form data
+            const investment = parseFloat(document.getElementById("sip-investment").value);
+            const rate = parseFloat(document.getElementById("sip-rate").value);
+            const time = parseInt(document.getElementById("sip-time").value);
+
+            // Calculate SIP
+            const monthlyRate = rate / 100 / 12;
+            const totalMonths = time * 12;
+            const sipAmount = investment * (((Math.pow(1 + monthlyRate, totalMonths) - 1) / monthlyRate) * (1 + monthlyRate));
+
+            // Display result
+            const resultElement = document.getElementById("sip-calculator-result");
+            resultElement.textContent = `After ${time} years, your SIP will be worth approximately ₹${sipAmount.toFixed(2)}`;
+        }
+
+        // Functions for Monthly Investment Need Calculator
+        function calculateMonthlyInvestment() {
+            // Get form data
+            const expectedAmount = parseFloat(document.getElementById("expected-amount").value);
+            const cagr = parseFloat(document.getElementById("cagr").value);
+            const investmentNeedTime = parseInt(document.getElementById("investment-need-time").value);
+
+            // Calculate Monthly Investment Need
+            const monthlyRate = cagr / 100 / 12;
+            const totalMonths = investmentNeedTime * 12;
+            const monthlyInvestmentNeed = expectedAmount / (((Math.pow(1 + monthlyRate, totalMonths) - 1) / monthlyRate) * (1 + monthlyRate));
+
+            // Display result
+            const resultElement = document.getElementById("monthly-investment-need-result");
+            resultElement.textContent = `To achieve ₹${expectedAmount.toFixed(2)} in ${investmentNeedTime} years, you need to invest approximately ₹${monthlyInvestmentNeed.toFixed(2)} every month.`;
+        }
+    </script>
+    <!-- Contact Section -->
+    <section id="contact">
+        <div class="container">
+            <h2>Contact Us</h2>
+            <form id="contactForm">
+                <label for="name">Your Name:</label>
+                <input type="text" id="name" name="name" placeholder="Your Name" required>
+
+                <label for="email">Email Id:</label>
+                <input type="email" id="email" name="email" placeholder="Email Id" required>
+
+                <label for="mobile">Mobile Number:</label>
+                <input type="tel" id="mobile" name="mobile" placeholder="Mobile Number (without +91)" required>
+
+                <label for="inquiry">How can we help you?</label>
+                <select id="inquiry" name="inquiry" required>
+                    <option value="" disabled selected>Select an option</option>
+                    <option value="equity">Equity</option>
+                    <option value="option">Option & Derivative</option>
+                    <option value="commodities">Commodities</option>
+                    <option value="loan">Loan</option>
+                    <option value="mutual_fund">Mutual Fund</option>
+                    <option value="sip">SIP</option>
+                    <option value="other">Other</option>
+                </select>
+
+                <label for="message">Message:</label>
+                <textarea id="message" name="message" placeholder="How can we help you?" rows="4" required></textarea>
+
+                <!-- Change type to "button" to prevent form submission -->
+                <button type="button" onclick="sendEmail()">Submit</button>
+            </form>
+        </div>
+    </section>
+
+    <script>
+        function sendEmail() {
+            console.log("Button clicked!");
+
+            // Get form data
+            const formData = new FormData(document.getElementById("contactForm"));
+
+            // Replace with your EmailJS template ID and service ID
+            const templateParams = {
+                to_name: "FinTradex Team",
+                from_name: formData.get("name"),
+                enquire: `He Enquired About ${formData.get("inquiry")}  ${formData.get("message")}.`,
+		contact: ` Mobile No : ${formData.get("mobile")} ------ Email : ${formData.get("email")}`,
+		useremail: formData.get("email")
+            };
+
+
+            // Send email using EmailJS
+            emailjs.send("service_q068e3d", "template_khnpbbp", templateParams)
+                .then(function(response) {
+                    console.log("Email sent successfully:", response);
+                    // Handle success (e.g., show a success message to the user)
+                }, function(error) {
+                    console.log("Email sending failed:", error);
+                    // Handle error (e.g., show an error message to the user)
+                });
+        }
+    </script>
+    <!-- Footer Section -->
+    <!-- Updated Footer Section -->
+<!-- Updated Footer Section -->
+<footer class="bg-dark">
+    <div class="container">
+        <p>&copy; 2023 FinTradex<span class="trademark">&trade;</span>. All Rights Reserved.</p>
+        <p>
+            <a href="#nism-certified" class="footer-link">NISM Certified</a> |
+            <a href="#authorized-business-partner" class="footer-link">Authorized Business Partner</a> |
+            <a href="#quantitative-research-analyst" class="footer-link">Quantitative Research Analyst</a> |
+            <a href="#expert-advisory" class="footer-link">Expert Advisory</a>
+        </p>
+        <p>
+            Mumbai, Thane 421302
+        </p>
+        <p>
+            
+            Account Opening in AngelOne:
+            <a href="https://shorturl.at/flpzS" target="_blank" class="footer-link" rel="noopener">
+                https://shorturl.at/flpzS
+            </a> |
+            Account Opening in MotilalOswal:
+            <a href="https://mosl.co/tStySnL7hF" target="_blank" class="footer-link" rel="noopener">
+                https://mosl.co/tStySnL7hF
+            </a>
+        </p>
+    </div>
+</footer>
+
+
+
+</body>
+</html>
