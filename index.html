@@ -17,26 +17,16 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
     <style>
-        /* Reset some default styles */
-        body, h1, h2, p, ul {
+       body, h1, h2, p, ul {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
-h2:hover,
-        h1:hover {
-            color: #8e54e9; /* Change color on hover */
-        }
 
-        /* Style for join buttons */
-        .join-button:hover {
-            background-color: #27ae60; /* Darker green on hover */
-            transform: scale(1.05); /* Increase size on hover */
-        }
         body {
             font-family: 'Roboto', sans-serif;
-            background: #141e30; /* Background gradient or image */
-            color: #fff;
+            background: #f5f5f5; /* Updated background color */
+            color: #333;
             line-height: 1.6;
         }
 
@@ -64,12 +54,6 @@ h2:hover,
         h1 {
             font-size: 2em;
             margin-top: 10px;
-            /* Hover effect for the slogan */
-            transition: color 0.3s ease;
-        }
-
-        h1:hover {
-            color: #8e54e9; /* Change color on hover */
         }
 
         /* Navigation Section */
@@ -110,19 +94,15 @@ h2:hover,
         #about {
             padding: 40px 0;
             text-align: center;
-            background: url('about-bg.jpg') center/cover; /* Add background image */
-            color: #fff;
+            background: #fff; /* Updated background to white */
+            color: #333;
         }
 
         #about h2 {
             font-size: 2.5em;
             margin-bottom: 20px;
-            /* Hover effect for the heading */
-            transition: color 0.3s ease;
-        }
-
-        #about h2:hover {
-            color: #8e54e9; /* Change color on hover */
+            /* Animation to move from left to right */
+            animation: slideFromLeft 1s ease;
         }
 
         #about p {
@@ -131,115 +111,36 @@ h2:hover,
             opacity: 0.9;
         }
 
+        @keyframes slideFromLeft {
+            from {
+                transform: translateX(-100%);
+            }
+            to {
+                transform: translateX(0);
+            }
+        }
+
         /* Services Section */
         #services {
             padding: 40px 0;
             text-align: center;
-            background: #2c3e50; /* Background color */
-            color: #fff;
+            background: #f5f5f5; /* Updated background color */
+            color: #333;
         }
 
         #services h2 {
             font-size: 2.5em;
             margin-bottom: 20px;
-            /* Hover effect for the heading */
-            transition: color 0.3s ease;
         }
 
-        #services h2:hover {
-            color: #8e54e9; /* Change color on hover */
+        .service-category {
+            margin-bottom: 20px; /* Added margin to separate categories */
         }
 
-        #services p {
-            font-size: 1.2em;
-            line-height: 1.8;
-            opacity: 0.9;
-        }
-
-        /* Contact Section */
-        #contact {
-            padding: 40px 0;
-            text-align: center;
-            background: #27ae60; /* Background color */
-            color: #fff;
-        }
-
-        #contact h2 {
-            font-size: 2.5em;
-            margin-bottom: 20px;
-            font-family: 'Calibri', sans-serif; /* Change font to Calibri */
-        }
-
-        form {
-            max-width: 600px;
-            margin: 0 auto;
-            display: flex;
-            flex-direction: column;
-            border: 2px solid #fff; /* Border color */
-            border-radius: 10px; /* Border radius */
-            padding: 20px;
-            box-shadow: 0 0 20px rgba(0, 0, 0, 0.2); /* Box shadow */
-        }
-
-        form label {
-            margin-bottom: 8px;
-            font-size: 1.1em;
-        }
-
-        form input,
-        form textarea,
-        form select {
-            width: 100%;
-            padding: 10px;
-            margin-bottom: 15px;
-            border: 1px solid #ccc;
-            border-radius: 4px;
-            font-size: 1em;
-        }
-
-        form button {
-            background-color: #333;
-            color: #fff;
-            padding: 10px 20px;
-            border: none;
-            border-radius: 4px;
-            cursor: pointer;
-            font-size: 1.1em;
-            transition: background-color 0.3s ease;
-        }
-
-        form button:hover {
-            background-color: #555;
-        }
-
-        /* Footer Section */
-        footer {
-            background-color: #333;
-            color: #fff;
-            text-align: center;
-            padding: 20px 0;
-            margin-top: 40px;
-        }
-
-        footer p {
-            font-size: 1.1em;
-            margin-bottom: 10px;
-        }
-
-        footer a {
-            color: #8e54e9;
-            text-decoration: none;
-            transition: color 0.3s ease;
-        }
-
-        footer a:hover {
-            color: #4776e6;
-        }
-
-        /* Style for service buttons */
         .service-buttons {
             display: flex;
             justify-content: space-around;
+            flex-wrap: wrap; /* Updated to wrap on smaller screens */
             margin-top: 15px;
         }
 
@@ -251,6 +152,7 @@ h2:hover,
             border-radius: 5px;
             cursor: pointer;
             transition: background-color 0.5s ease, color 0.5s ease;
+            margin: 5px; /* Added margin for spacing */
         }
 
         .service-button:hover {
@@ -258,14 +160,9 @@ h2:hover,
             color: #fff;
         }
 
-
-        /* Style for slow-motion effect */
-        .service-details-popup.open {
+        /* Service Details Popup */
+        .service-details-popup {
             animation: openPopup 0.5s ease;
-        }
-
-        .service-details-popup.close {
-            animation: closePopup 0.5s ease;
         }
 
         @keyframes openPopup {
@@ -277,26 +174,12 @@ h2:hover,
             }
         }
 
-        @keyframes closePopup {
-            from {
-                transform: scale(1);
-            }
-            to {
-                transform: scale(0);
-            }
-        } 
-
-	#join-us {
+        /* Join Us Section */
+        #join-us {
             padding: 40px 0;
             text-align: center;
             background: #3498db; /* Background color */
             color: #fff;
-            transform: translateX(-100%); /* Initially off-screen to the left */
-            transition: transform 0.8s ease; /* Animation transition */
-        }
-
-        #join-us.show {
-            transform: translateX(0); /* Move in from left when the show class is added */
         }
 
         #join-us h2 {
@@ -310,7 +193,6 @@ h2:hover,
             opacity: 0.9;
         }
 
-        /* Style for join buttons */
         .join-buttons {
             display: flex;
             justify-content: center;
@@ -337,74 +219,12 @@ h2:hover,
 
         .button-icon {
             margin-right: 10px;
-        } 
-/* SIP Calculator styles */
-        #sip-calculator {
-            padding: 40px 0;
-            text-align: center;
-            background: #3498db; /* Background color */
-            color: #fff;
         }
 
-        #sip-calculator h2 {
-            font-size: 2.5em;
-            margin-bottom: 20px;
-        }
-
-        #calculator-form {
-            max-width: 600px;
-            margin: 0 auto;
-            display: flex;
-            flex-direction: column;
-            border: 2px solid #fff; /* Border color */
-            border-radius: 10px; /* Border radius */
-            padding: 20px;
-            box-shadow: 0 0 20px rgba(0, 0, 0, 0.2); /* Box shadow */
-        }
-
-        #calculator-form label {
-            margin-bottom: 8px;
-            font-size: 1.1em;
-        }
-
-        #calculator-form input {
-            width: calc(100% - 22px);
-            padding: 10px;
-            margin-bottom: 15px;
-            border: 1px solid #ccc;
-            border-radius: 4px;
-            font-size: 1em;
-            display: inline-block;
-        }
-
-        #calculator-form button {
-            background-color: #333;
-            color: #fff;
-            padding: 10px 20px;
-            border: none;
-            border-radius: 4px;
-            cursor: pointer;
-            font-size: 1.1em;
-            transition: background-color 0.3s ease;
-        }
-
-        #calculator-form button:hover {
-            background-color: #555;
-        }
-
-        #calculator-result {
-            margin-top: 20px;
-            font-size: 1.2em;
-        } 
-
-        /* SIP Calculator styles */
+        /* SIP Calculator Section */
         #calculator-container {
             display: flex;
-            justify-content: space-between;
-            padding: 40px 0;
-            text-align: center;
-            background: #3498db; /* Background color */
-            color: #fff;
+            flex-direction: column; /* Changed to column layout */
         }
 
         .calculator {
@@ -417,41 +237,63 @@ h2:hover,
             border-radius: 10px; /* Border radius */
             padding: 20px;
             box-shadow: 0 0 20px rgba(0, 0, 0, 0.2); /* Box shadow */
-        }
-
-        .calculator label {
-            margin-bottom: 8px;
-            font-size: 1.1em;
-        }
-
-        .calculator input {
-            width: calc(100% - 22px);
-            padding: 10px;
-            margin-bottom: 15px;
-            border: 1px solid #ccc;
-            border-radius: 4px;
-            font-size: 1em;
-            display: inline-block;
-        }
-
-        .calculator button {
-            background-color: #333;
+            margin-bottom: 20px; /* Added margin to separate calculators */
+            background: #3498db; /* Blue background */
             color: #fff;
-            padding: 10px 20px;
-            border: none;
-            border-radius: 4px;
-            cursor: pointer;
+        }
+
+        .calculator h3 {
+            font-size: 1.5em;
+            margin-bottom: 20px;
+        }
+
+        .input-group {
+            display: flex;
+            flex-direction: column; /* Stack inputs vertically */
+            margin-bottom: 15px;
+        }
+
+        .input-group label {
             font-size: 1.1em;
-            transition: background-color 0.3s ease;
+            margin-bottom: 5px;
         }
 
-        .calculator button:hover {
-            background-color: #555;
+        .input-group input {
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
         }
 
-        .calculator-result {
+        .calculate-button {
+            align-self: flex-end;
+            padding: 10px 20px;
+            background-color: #2ecc71; /* Green color */
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        /* Footer Section */
+        footer {
+            padding: 20px 0;
+            text-align: center;
+            background: #333; /* Dark background color */
+            color: #fff;
+        }
+
+        .social-icons {
             margin-top: 20px;
-            font-size: 1.2em;
+        }
+
+        .social-icons a {
+            color: #fff;
+            font-size: 1.5em;
+            margin: 0 10px;
+        }
+
+        .social-icons a:hover {
+            color: #8e54e9; /* Accent color on hover */
         }
 </style>
 </head>
